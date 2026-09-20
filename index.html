@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Philp Maxwel — graphic designer</title>
+    <meta
+      name="description"
+      content="Philp Maxwel is a graphic designer working on brand identity, print and packaging from Norwich, UK."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-head">
+      <a class="wordmark" href="#top">Philp Maxwel</a>
+      <nav aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow">Graphic design · Norwich, UK</p>
+        <h1>Marks, packaging and print that hold up in the real world.</h1>
+        <p class="lede">
+          Twelve years of brand identity work for small studios, food producers and record labels.
+          Available for commissions from October.
+        </p>
+      </section>
+
+      <section id="work" class="work" aria-labelledby="work-heading">
+        <div class="work-head">
+          <h2 id="work-heading">Selected work</h2>
+          <label class="search">
+            <span class="search-label">Search</span>
+            <input
+              id="work-search"
+              type="search"
+              name="query"
+              placeholder="Brand, client or tag"
+              autocomplete="off"
+            />
+          </label>
+        </div>
+
+        <div id="work-filters" class="filters" role="group" aria-label="Filter by tag"></div>
+
+        <div id="work-grid" class="grid"></div>
+
+        <p id="work-empty" class="empty" hidden>No work matches that yet.</p>
+
+        <div class="work-foot">
+          <p id="work-count" class="count" aria-live="polite"></p>
+          <button id="more-work" class="more" type="button">More work</button>
+        </div>
+      </section>
+
+      <section id="about" class="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <div class="about-body">
+          <p>
+            I work mostly with people who are making something for the first time: a coffee roastery
+            naming its first blend, a festival printing its first run of posters, a clinic network
+            that needs a sign you can read from a moving bus.
+          </p>
+          <p>
+            Every project starts on paper. Most of them stay there longer than clients expect, which
+            is usually the right call.
+          </p>
+          <ul class="services">
+            <li>Brand identity and marks</li>
+            <li>Packaging and label systems</li>
+            <li>Editorial and print production</li>
+            <li>Wayfinding and signage</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Start a project</h2>
+        <form id="enquiry-form" novalidate>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+
+          <label for="message">What are you making?</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Send enquiry</button>
+        </form>
+        <p id="enquiry-status" class="status" role="status"></p>
+      </section>
+    </main>
+
+    <footer class="site-foot">
+      <p>Philp Maxwel · Norwich, UK</p>
+      <p><a href="mailto:studio@philpmaxwel.co.uk">studio@philpmaxwel.co.uk</a></p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

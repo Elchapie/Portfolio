@@ -1,0 +1,19 @@
+{
+  "name": "philp-maxwel-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio site for Philp Maxwel, graphic designer.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "serve": "node scripts/serve.js",
+    "repro:gallery": "node repro/gallery.js",
+    "repro:search": "node repro/search.js",
+    "repro:sort": "node repro/sort.js",
+    "repro:dates": "node repro/dates.js",
+    "repro:email": "node repro/email.js"
+  }
+}

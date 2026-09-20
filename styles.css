@@ -1,0 +1,389 @@
+:root {
+  --bg: #f7f5f1;
+  --ink: #16150f;
+  --muted: #6d6a60;
+  --line: #ded9cf;
+  --accent: #b4451f;
+  --radius: 14px;
+  --measure: 68rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.site-head,
+main > section,
+.site-foot {
+  width: min(100% - 3rem, var(--measure));
+  margin-inline: auto;
+}
+
+/* Header ------------------------------------------------------------------ */
+
+.site-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.75rem;
+}
+
+.wordmark {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.site-head nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.site-head nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.site-head nav a:hover {
+  color: var(--ink);
+}
+
+/* Hero -------------------------------------------------------------------- */
+
+.hero {
+  padding-block: 3.5rem 4.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 5.4vw, 3.6rem);
+  font-weight: 620;
+  max-width: 22ch;
+}
+
+.lede {
+  max-width: 46ch;
+  color: var(--muted);
+  margin-top: 1.5rem;
+}
+
+/* Work grid --------------------------------------------------------------- */
+
+.work {
+  padding-block: 3rem;
+  border-top: 1px solid var(--line);
+}
+
+.work-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.work h2,
+.about h2,
+.contact h2 {
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+  font-weight: 600;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: min(100%, 20rem);
+}
+
+.search-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-block: 1.5rem 2rem;
+}
+
+.filter {
+  font: inherit;
+  font-size: 0.9rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  border-radius: 999px;
+  padding: 0.32rem 0.85rem;
+  cursor: pointer;
+}
+
+.filter[aria-pressed='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.card-art {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  background: linear-gradient(140deg, var(--accent), var(--shade));
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 1rem;
+}
+
+.card-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.card h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.card-date {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.card-blurb {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 0;
+}
+
+.card-tags li {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.12rem 0.6rem;
+}
+
+.empty,
+.count {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.work-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.more {
+  font: inherit;
+  border: 1px solid var(--ink);
+  background: transparent;
+  border-radius: 999px;
+  padding: 0.45rem 1.2rem;
+  cursor: pointer;
+}
+
+.more:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* About and contact ------------------------------------------------------- */
+
+.about,
+.contact {
+  padding-block: 3.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.about-body {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 18rem);
+  margin-top: 1.5rem;
+}
+
+.about-body p {
+  margin: 0;
+  max-width: 52ch;
+  color: var(--muted);
+}
+
+.services {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  font-size: 0.95rem;
+}
+
+.services li {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.5rem;
+}
+
+.contact form {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 32rem;
+  margin-top: 1.5rem;
+}
+
+.contact label {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}
+
+.contact button {
+  font: inherit;
+  justify-self: start;
+  margin-top: 1rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 999px;
+  padding: 0.5rem 1.4rem;
+  cursor: pointer;
+}
+
+.status {
+  min-height: 1.5rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.status.is-error {
+  color: var(--accent);
+}
+
+/* Footer ------------------------------------------------------------------ */
+
+.site-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-block: 2rem 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-foot p {
+  margin: 0;
+}
+
+/* Narrow screens ---------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .about-body {
+    grid-template-columns: 1fr;
+  }
+
+  .work-foot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
